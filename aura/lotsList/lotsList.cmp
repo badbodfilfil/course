@@ -1,0 +1,13 @@
+<aura:component >
+
+    <aura:attribute name="lots" type="Lot__c[]"/>
+
+    <lightning:card title="Lots">
+        <p class="slds-p-horizontal--small">
+            <aura:iteration items="{!v.lots}" var="lot">
+                 <c:singleLotItem lot="{!lot}"/>
+            </aura:iteration>
+        </p>
+    </lightning:card>
+
+</aura:component>

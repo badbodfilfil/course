@@ -1,0 +1,31 @@
+<aura:component >
+	 <aura:attribute name="newLot" type="Lot__c"
+     default="{ 'sobjectType': 'Lot__c',
+                    'Name': '',
+                    'Money__c': 0,
+                    'Description__c': '',}"/>
+    <aura:attribute name="lots" type="Lot__c[]"/>
+    <aura:registerEvent name="createLot" type="c:lotsItemUpdate"/>
+    <form class="slds-form--stacked">          
+      <lightning:input aura:id="lotform" label="Lot Name"
+                         name="lotname"
+                         value="{!v.newLot.Name}"
+                         required="true"/> 
+        <lightning:textarea aura:id="lotform" label="Lot Description"
+                            name="lotdescription"
+                            value="{!v.newLot.Description__c}"
+                            required="true"/> 
+        <lightning:input type="text" aura:id="lotform" label="Lot money"
+                         name="lotmoney"
+                         min="0.1"
+                         formatter="currency"
+                         step="0.01"
+                         value="{!v.newLot.Money__c}"
+                         required="true"
+                         messageWhenRangeUnderflow="Enter an amount that's at least $0.10."/>
+        <lightning:button label="Create Lot" 
+                          class="slds-m-top--medium"
+                          variant="brand"
+                          onclick="{!c.clickCreate}"/>
+    </form>
+</aura:component>

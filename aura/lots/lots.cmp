@@ -1,0 +1,45 @@
+<aura:component controller="LotsController" implements="force:appHostable">
+   
+    <aura:attribute name="lots" type="Lot__c[]"/>
+
+<aura:handler name="createLot" event="c:lotsItemUpdate"
+    action="{!c.handleCreateLot}"/>
+
+    <lightning:layout class="slds-page-header slds-page-header--object-home">
+        <lightning:layoutItem >
+            <lightning:icon iconName="standard:scan_card" alternativeText="Lots"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="horizontal-small">
+            <div class="page-section page-header">
+                <h1 class="slds-text-heading--label">Lots</h1>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <lightning:layout >
+        <lightning:layoutItem padding="around-small" size="6">
+<div aria-labelledby="newlotform">
+
+    <!-- BOXED AREA -->
+    <fieldset class="slds-box slds-theme--default slds-container--small">
+
+    <legend id="newlotform" class="slds-text-heading--small 
+      slds-p-vertical--medium">
+      Add Lot
+    </legend>
+<lightning:layout >
+    <lightning:layoutItem padding="around-small" size="6">
+        <c:lotForm lots="{!v.lots}"/>
+    </lightning:layoutItem>
+</lightning:layout>
+  </fieldset>
+  <!-- / BOXED AREA -->
+</div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    	<lightning:layout >
+    <lightning:layoutItem padding="around-small" size="6">
+        <c:lotsList lots="{!v.lots}"/>
+    </lightning:layoutItem>
+</lightning:layout>
+
+</aura:component>

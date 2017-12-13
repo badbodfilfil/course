@@ -1,0 +1,13 @@
+<aura:component >
+    <aura:attribute name="lot" type="Lot__c"/>
+
+
+    <lightning:card title="{!v.lot.Name}" iconName="standard:scan_card">
+        <p class="slds-text-heading--medium slds-p-horizontal--small">
+           Money: <lightning:formattedNumber value="{!v.lot.Money__c}" style="currency"/>
+        </p>
+        <p class="slds-p-horizontal--small">
+            Description: {!v.lot.Description__c}
+        </p>
+    </lightning:card>
+</aura:component>
