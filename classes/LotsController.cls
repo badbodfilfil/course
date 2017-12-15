@@ -9,7 +9,7 @@ public with sharing class LotsController {
     public static Project__c createProject(Project__c project, String name, String contentType, String data) {
         upsert project;
         Attachment att = new Attachment(Name = name, ParentId = project.Id, OwnerId = UserInfo.getUserId(), ContentType = contentType, Body = EncodingUtil.base64Decode(data));
-        system.debug('from saveImage att'+att);
+        
         insert att;
         
         return project;
@@ -25,7 +25,6 @@ public with sharing class LotsController {
         for(Lot__c lot: lots){
             lot.Project__c=projects[0].Id;
         }
-        system.debug('from updateLots'+projects[0].Id);
         update lots;
         return lots;
     }

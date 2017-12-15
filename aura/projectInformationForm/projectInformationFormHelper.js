@@ -20,6 +20,7 @@
     
     createProject: function(component) {
         var action = component.get("c.createProject");
+        component.set("v.newProject.Category__c" , component.get("v.newProject.Category__c.Name.Id"));
         action.setParams({"project": component.get("v.newProject"),
                           "name": component.get("v.fileName"),
                           "contentType": component.get("v.contentType"),
@@ -49,9 +50,6 @@
                component.set("v.type", p[1]);
                component.set("v.data", p[2]);
                component.set("v.fileName", fileName);
-                console.log(p[1]);
-                console.log(p[2]);
-                console.log(fileName);
             }
         };
         reader.readAsDataURL(event.getSource().get("v.files")[0]);

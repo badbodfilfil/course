@@ -1,0 +1,21 @@
+<aura:component controller="ProjectsController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    
+    <aura:attribute name="project" type="Project__c"/>
+    
+    <aura:attribute name="imageSrc" type="String"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    
+    <lightning:card title="{!v.project.Name}" iconName="standard:scan_card">
+        <p class="slds-text-heading--medium slds-p-horizontal--small">
+            Money: <lightning:formattedNumber value="{!v.project.Budget__c}" style="currency"/>
+        </p>
+        <p class="slds-text-heading--medium slds-p-horizontal--small"> 
+            <img src="{!v.imageSrc}" /> </p>
+        <p class="slds-text-heading--medium slds-p-horizontal--small">
+            Days: <lightning:formattedNumber value="{!v.project.Days__c}"/>
+        </p>
+        <p class="slds-p-horizontal--small">
+            Description: {!v.project.Description__c}
+        </p>
+    </lightning:card>
+</aura:component>

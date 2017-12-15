@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" >
+	<aura:attribute name="recordByEvent" type="Category__c"/>
+</aura:event>

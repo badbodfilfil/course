@@ -6,7 +6,6 @@
         }, true);
         if(validLot){
             var newLot = component.get("v.newLot");
-            console.log("Create lot: " + JSON.stringify(newLot));
             helper.createLot(component, newLot);
         }
     },

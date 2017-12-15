@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>CategoryLookUpController</members>
         <members>LotsController</members>
+        <members>ProjectsController</members>
         <name>ApexClass</name>
     </types>
     <types>
+        <members>categoriesNavBar</members>
+        <members>categoryLookup</members>
+        <members>categoryLookupResult</members>
         <members>lotForm</members>
         <members>lots</members>
         <members>lotsItemUpdate</members>
         <members>lotsList</members>
+        <members>projectInformation</members>
         <members>projectInformationForm</members>
+        <members>projectItem</members>
+        <members>projects</members>
+        <members>projectsList</members>
+        <members>selectedCategoryRecordEvent</members>
         <members>singleLotItem</members>
         <name>AuraDefinitionBundle</name>
     </types>

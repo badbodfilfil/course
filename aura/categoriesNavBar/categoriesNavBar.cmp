@@ -1,0 +1,18 @@
+<aura:component >
+    <aura:attribute name="categories" type="Category__c[]"/>
+    <lightning:layout >
+        
+        
+        <nav class="slds-nav-vertical slds-nav-vertical_shade" aria-label="Sub page"> 
+            <div class="slds-nav-vertical__section"> 
+                <ul> 
+                    <aura:iteration items="{!v.categories}" var="category"> 
+                        <li class="slds-nav-vertical__item" > 
+                            <a name="{!category.Name}" id="{!category.Id}"  onclick="{!c.selectCategory}" class="slds-nav-vertical__action" aria-describedby="entity-header">{!category.Name}</a> 
+                        </li> 
+                    </aura:iteration> 
+                </ul> 
+            </div> 
+        </nav> 
+    </lightning:layout>
+</aura:component>
