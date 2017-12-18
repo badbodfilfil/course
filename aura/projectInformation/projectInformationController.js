@@ -1,7 +1,7 @@
 ({
     doInit: function(component, event, helper) {
-        console.log("INITSUKA");
         helper.initLots(component);
+        component.set('v.progress', component.get("v.project.Donations__c")/component.get("v.project.Budget__c")*100);
     },
     
     handleDonate: function(component, event, helper) {

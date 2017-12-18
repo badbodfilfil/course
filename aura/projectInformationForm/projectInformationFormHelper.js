@@ -6,7 +6,15 @@
         action.setCallback(this, function(response) {
             var state = response.getState();
             if (state === "SUCCESS") {
-                console.log("Success savelot: " + state);
+                var evt = $A.get("e.force:navigateToComponent");
+                var project = component.get("v.newProject");
+                evt.setParams({
+                    componentDef: "c:projectInformation",
+                    componentAttributes: {
+                        project : project
+                    }
+                });
+                evt.fire(); 
             }
             else {
                 console.log("Failed with state savelot: " + state);
@@ -35,6 +43,7 @@
         });
         
         $A.enqueueAction(action);
+        
     },
     
     

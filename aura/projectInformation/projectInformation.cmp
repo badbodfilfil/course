@@ -2,6 +2,7 @@
     
     <aura:attribute name="project" type="Project__c"/>
     <aura:attribute name="lots" type="Lot__c"/>
+    <aura:attribute name="progress" type="Integer" default="0"/>
     <aura:handler name="donate" event="c:projectDonateEvt"
                   action="{!c.handleDonate}"/>
     
@@ -28,6 +29,8 @@
         <p class="slds-p-horizontal--small">
             Donations: <lightning:formattedNumber value="{!v.project.Donations__c}" style="currency"/>
         </p>
+        <lightning:progressBar value="{!v.progress}"/>
+
         <c:lotsList buttons="true" lots="{!v.lots}" />
     </lightning:card>
 </aura:component>

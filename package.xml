@@ -7,9 +7,11 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>addressMap</members>
         <members>categoriesNavBar</members>
         <members>categoryLookup</members>
         <members>categoryLookupResult</members>
+        <members>contacts</members>
         <members>lotForm</members>
         <members>lots</members>
         <members>lotsItemUpdate</members>
@@ -21,8 +23,13 @@
         <members>projects</members>
         <members>projectsList</members>
         <members>selectedCategoryRecordEvent</members>
+        <members>serviceDescription</members>
         <members>singleLotItem</members>
         <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>serviceimg</members>
+        <name>StaticResource</name>
     </types>
     <version>36.0</version>
 </Package>
