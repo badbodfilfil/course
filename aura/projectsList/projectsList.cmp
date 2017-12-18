@@ -1,0 +1,13 @@
+<aura:component >
+
+    <aura:attribute name="projects" type="Project__c[]"/>
+
+    <lightning:card title="Projects">
+        <p class="slds-p-horizontal--small">
+            <aura:iteration items="{!v.projects}" var="project">
+                <c:projectItem project="{!project}"/>
+            </aura:iteration>
+        </p>
+    </lightning:card>
+
+</aura:component>

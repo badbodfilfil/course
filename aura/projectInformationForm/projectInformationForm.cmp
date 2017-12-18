@@ -7,6 +7,7 @@
                     'Video__c': '',
                     'Budget__c': '',
                     'Days__c': '',
+                    'Donations__c': 0,
                     'Category__c': '',
                     'Information__c': '',
                     'Wallet__c': '' }"/>

@@ -1,5 +1,6 @@
-<aura:component >
+<aura:component controller="ProjectsController">
     <aura:attribute name="categories" type="Category__c[]"/>
+    <aura:attribute name="projects" type="Project__c[]"/>
     <lightning:layout >
         
         

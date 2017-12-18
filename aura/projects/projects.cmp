@@ -5,7 +5,7 @@
     <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
     <lightning:layout >
         <lightning:layoutItem padding="around-small" size="8">
-            <c:categoriesNavBar categories="{!v.categories}"/>
+            <c:categoriesNavBar projects="{!v.projects}" categories="{!v.categories}"/>
         </lightning:layoutItem>
         <lightning:layoutItem padding="around-small" size="6">
             <c:projectsList projects="{!v.projects}"/>

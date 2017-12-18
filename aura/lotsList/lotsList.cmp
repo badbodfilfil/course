@@ -1,11 +1,12 @@
 <aura:component >
 
     <aura:attribute name="lots" type="Lot__c[]"/>
+    <aura:attribute name="buttons" type="Boolean" default="false"/>
 
     <lightning:card title="Lots">
         <p class="slds-p-horizontal--small">
             <aura:iteration items="{!v.lots}" var="lot">
-                 <c:singleLotItem lot="{!lot}"/>
+                 <c:singleLotItem buttons="{!v.buttons}" lot="{!lot}"/>
             </aura:iteration>
         </p>
     </lightning:card>
