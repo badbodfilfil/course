@@ -1,6 +1,5 @@
 <aura:component controller="ProjectsController">
     <aura:attribute name="project" type="Project__c"/>
-    <aura:attribute name="imageSrc" type="String"/>
     
     
     <lightning:card >
@@ -9,7 +8,6 @@
         <p class="slds-text-heading--medium slds-p-horizontal--small">
             Money: <lightning:formattedNumber value="{!v.project.Budget__c}" style="currency"/>
         </p>
-          <!--  <img src="{!v.imageSrc}" />-->
         <p class="slds-text-heading--medium slds-p-horizontal--small">
             Days: <lightning:formattedNumber value="{!v.project.Days__c}"/>
         </p>

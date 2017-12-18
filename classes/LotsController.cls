@@ -6,12 +6,8 @@ public with sharing class LotsController {
                 FROM Lot__c];
     }
     @AuraEnabled
-    public static Project__c createProject(Project__c project, String name, String contentType, String data) {
+    public static Project__c createProject(Project__c project) {
         upsert project;
-        Attachment att = new Attachment(Name = name, ParentId = project.Id, OwnerId = UserInfo.getUserId(), ContentType = contentType, Body = EncodingUtil.base64Decode(data));
-        
-        insert att;
-        
         return project;
     }
     @AuraEnabled

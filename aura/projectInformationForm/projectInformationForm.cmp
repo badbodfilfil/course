@@ -7,15 +7,13 @@
                     'Video__c': '',
                     'Budget__c': '',
                     'Days__c': '',
+                    'Image__c': '',
                     'Donations__c': 0,
                     'Category__c': '',
                     'Information__c': '',
                     'Wallet__c': '' }"/>
     <aura:attribute name="myRecordId" type="Id" />
     <aura:attribute name="lots" type="Lot__c[]" />
-    <aura:attribute name="data" type="String" />
-    <aura:attribute name="contentType" type="String" />
-    <aura:attribute name="fileName" type="String" />
     <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
     <form class="slds-form--stacked">          
         <lightning:input aura:id="projectform" label="Project Name"
@@ -31,7 +29,11 @@
                          name="projectlocation"
                          value="{!v.newProject.Location__c}"
                          required="true"/> 
-        <lightning:input type="file" label="Image" name="file" multiple="false" accept="image/png, image/jpg" onchange="{! c.handleUploadFinished }"/>
+        <lightning:input aura:id="projectform" label="Project Image"
+                         type="url"
+                         name="projectimage"
+                         value="{!v.newProject.Image__c}"
+                         required="true"/> 
         <lightning:input aura:id="projectform" label="Project Video"
                          type="url"
                          name="projectvideo"
