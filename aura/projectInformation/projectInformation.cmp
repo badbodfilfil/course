@@ -8,29 +8,43 @@
     
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     
-    
-    <lightning:card title="{!v.project.Name}" iconName="standard:scan_card">
+    <div class="slds-box">
+    <lightning:layout >
+        
+        <lightning:layoutItem size="4">
+        <p class="slds-text-heading--medium slds-p-horizontal--small"> 
+            <aura:html tag="img" src="{!v.project.Image__c}"/>
+            </p></lightning:layoutItem>
+        <lightning:layoutItem size="8">
+            <div class="white-back">
+        <h1 style="font-size:140%">{!v.project.Name}</h1>
+        <br></br>
         <p class="slds-text-heading--medium slds-p-horizontal--small">
             Money: <lightning:formattedNumber value="{!v.project.Budget__c}" style="currency"/>
         </p>
-        <p class="slds-text-heading--medium slds-p-horizontal--small"> 
-            <aura:html tag="img" src="{!v.project.Image__c}"/>
-        </p>
+        <br></br>
         <p class="slds-text-heading--medium slds-p-horizontal--small">
             Days: <lightning:formattedNumber value="{!v.project.Days__c}"/>
         </p>
+        <br></br>
         <p class="slds-text-heading--medium slds-p-horizontal--small">
             Days left: <lightning:formattedNumber value="{!v.project.Days_Left__c}"/>
         </p>
+        <br></br>
         <p class="slds-p-horizontal--small">
             Description: {!v.project.Description__c}
         </p>
-        
+        <br></br>
         <p class="slds-p-horizontal--small">
             Donations: <lightning:formattedNumber value="{!v.project.Donations__c}" style="currency"/>
         </p>
         <lightning:progressBar value="{!v.progress}"/>
+                </div>
+        </lightning:layoutItem>
 
+    </lightning:layout>
+        <br></br>
+        <br></br>
         <c:lotsList buttons="true" lots="{!v.lots}" />
-    </lightning:card>
+        </div>
 </aura:component>

@@ -1,0 +1,24 @@
+.THIS label.slds-form-element__label.slds-no-flex{
+    display:none;
+}
+.THIS label.slds-form-element__label{
+    display:none;
+}
+.THIS{
+    font-family: 'Salesforce Sans',Arial,sans-serif;
+    font-size: 110%;
+    line-height: 1.5;
+    color: rgb(62, 62, 60);
+}
+
+.THIS .white-back{
+background:white;
+padding: 20px;}
+.THIS .align-center{
+    
+    text-align:center;
+}
+.THIS div{
+    
+    border-radius:5px;
+}

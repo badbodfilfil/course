@@ -1,69 +1,86 @@
 <aura:component controller="LotsController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
     <aura:attribute name="newProject" type="Project__c"
                     default="{ 'sobjectType': 'Project__c',
-                    'Name': '',
-                    'Description__c': '',
-                    'Location__c': '',
-                    'Video__c': '',
-                    'Budget__c': '',
-                    'Days__c': '',
-                    'Image__c': '',
-                    'Donations__c': 0,
-                    'Category__c': '',
-                    'Information__c': '',
-                    'Wallet__c': '' }"/>
+                             'Name': '',
+                             'Description__c': '',
+                             'Location__c': '',
+                             'Video__c': '',
+                             'Budget__c': '',
+                             'Days__c': '',
+                             'Image__c': '',
+                             'Donations__c': 0,
+                             'Category__c': '',
+                             'Information__c': '',
+                             'Wallet__c': '' }"/>
     <aura:attribute name="myRecordId" type="Id" />
     <aura:attribute name="lots" type="Lot__c[]" />
     <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
-    <form class="slds-form--stacked">          
-        <lightning:input aura:id="projectform" label="Project Name"
-                         name="projectname"
-                         value="{!v.newProject.Name}"
-                         required="true"/> 
-        <lightning:textarea aura:id="projectform" label="Project Description"
-                            name="projectdescription"
-                            value="{!v.newProject.Description__c}"
-                            required="true"/> 
-        <lightning:input aura:id="projectform" label="Location"
-                         type="text"
-                         name="projectlocation"
-                         value="{!v.newProject.Location__c}"
-                         required="true"/> 
-        <lightning:input aura:id="projectform" label="Project Image"
-                         type="url"
-                         name="projectimage"
-                         value="{!v.newProject.Image__c}"
-                         required="true"/> 
-        <lightning:input aura:id="projectform" label="Project Video"
-                         type="url"
-                         name="projectvideo"
-                         value="{!v.newProject.Video__c}"
-                         required="true"/> 
-        <lightning:input type="text" aura:id="projectform" label="Project budget"
-                         name="projectbudget"
-                         min="0.1"
-                         formatter="currency"
-                         step="0.01"
-                         value="{!v.newProject.Budget__c}"
-                         messageWhenRangeUnderflow="Enter an amount that's at least $0.10."/>
-        <lightning:input aura:id="projectform" label="Project days"
-                         type="number"
-                         max="365"
-                         name="projectdays"
-                         value="{!v.newProject.Days__c}"
-                         required="true"/> 
-         <lightning:inputRichText aura:id="projectform"
-                                 value="{!v.newProject.Information__c}"/>
-          <c:categoryLookup selectedRecord="{!v.newProject.Category__c.Name}" project="{!v.newProject}"/>
-        <lightning:input aura:id="projectform" label="Project wallet"
-                         type="text"
-                         name="projectwallet"
-                         value="{!v.newProject.Wallet__c}"
-                         required="true"/> 
+    <div class="slds-box">
+        <div class="white-back">
+    <form class="slds-form--stacked">
+        <lightning:layout >
+            <lightning:layoutItem size="6">
+                <div style="padding: 10px">
+                Name: <lightning:input aura:id="projectform" label=""
+                                       name="projectname"
+                                       value="{!v.newProject.Name}"
+                                       required="true"/> 
+                Wallet: <lightning:input aura:id="projectform" label="Project wallet"
+                                         type="text"
+                                         name="projectwallet"
+                                         value="{!v.newProject.Wallet__c}"
+                                         required="true"/>
+                Location: <lightning:input aura:id="projectform" label="Location"
+                                           type="text"
+                                           name="projectlocation"
+                                           value="{!v.newProject.Location__c}"
+                                           required="true"/> 
+                Image: <lightning:input aura:id="projectform" label="Project Image"
+                                        type="url"
+                                        name="projectimage"
+                                        value="{!v.newProject.Image__c}"
+                                        required="true"/> 
+                Video: <lightning:input aura:id="projectform" label="Project Video"
+                                        type="url"
+                                        name="projectvideo"
+                                        value="{!v.newProject.Video__c}"
+                                        required="true"/> 
+                Budget: <lightning:input type="text" aura:id="projectform" label="Project budget"
+                                         name="projectbudget"
+                                         min="0.1"
+                                         formatter="currency"
+                                         step="0.01"
+                                         value="{!v.newProject.Budget__c}"
+                                         messageWhenRangeUnderflow="Enter an amount that's at least $0.10."/>
+                Days: <lightning:input aura:id="projectform" label="Project days"
+                                       type="number"
+                                       max="365"
+                                       name="projectdays"
+                                       value="{!v.newProject.Days__c}"
+                                       required="true"/> 
+                    </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="6">
+                <div style="padding: 10px">
+                Category: <c:categoryLookup selectedRecord="{!v.newProject.Category__c.Name}" project="{!v.newProject}"/>
+                
+                Description: <lightning:textarea aura:id="projectform" label="Project Description"
+                                                 name="projectdescription"
+                                                 value="{!v.newProject.Description__c}"
+                                                 required="true"/> 
+                Information: <lightning:inputRichText aura:id="projectform"
+                                                      value="{!v.newProject.Information__c}"/>
+                    </div>
+            </lightning:layoutItem>
+            
+        </lightning:layout>
+        <br></br>
+        
         <c:lots lots="{!v.lots}"/>
         <lightning:button label="Create" 
                           class="slds-m-top--medium"
                           variant="brand"
                           onclick="{!c.clickCreate}"/>
     </form>
+        </div>        </div>
 </aura:component>

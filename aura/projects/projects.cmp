@@ -3,11 +3,11 @@
     <aura:attribute name="projects" type="Project__c[]"/>
      <aura:attribute name="categories" type="Category__c[]"/>
     <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
-    <lightning:layout >
-        <lightning:layoutItem padding="around-small" size="8">
+    <lightning:layout class="slds-box">
+        <lightning:layoutItem padding="around-small" size="2">
             <c:categoriesNavBar projects="{!v.projects}" categories="{!v.categories}"/>
         </lightning:layoutItem>
-        <lightning:layoutItem padding="around-small" size="6">
+        <lightning:layoutItem padding="around-small" size="10">
             <c:projectsList projects="{!v.projects}"/>
         </lightning:layoutItem>
     </lightning:layout>
